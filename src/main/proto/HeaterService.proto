@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.smarthome.heater;
+
+option java_multiple_files = true;
+option java_package = "com.smarthome.heater.heaterservice";
+option java_outer_classname = "HeaterServiceProto";
+
+service HeaterService {
+  // Unary RPC
+  rpc sendUnaryRequest(UnaryRequest) returns (UnaryResponse);
+
+  // Server-side streaming RPC
+  rpc heaterInformation(stream ClientInformation) returns (ServerResponse);
+
+}
+
+message UnaryRequest {
+  string name = 1;
+}
+
+message UnaryResponse {
+  string message = 1;
+}
+
+message ClientInformation {
+  string clientName = 1;
+  string dateTime = 2;
+}
+
+message ServerResponse {
+  string message = 1;
+}
