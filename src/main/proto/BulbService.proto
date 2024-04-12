@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.smarthome.bulb;
+
+option java_multiple_files = true;
+option java_package = "com.smarthome.bulb.bulbservice";
+option java_outer_classname = "BUlbServiceProto";
+
+service BulbService {
+  // Bidirectional streaming RPC
+  rpc bidirectionalStream(stream BidirectionalRequest) returns (stream BidirectionalResponse);
+}
+
+message BidirectionalRequest {
+  string message = 1;
+}
+
+message BidirectionalResponse {
+  string message = 1;
+}
