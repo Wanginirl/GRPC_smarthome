@@ -5,7 +5,7 @@ import io.grpc.stub.StreamObserver;
 
 import java.util.concurrent.TimeUnit;
 
-public class BulbClient {
+public class Client {
 
     private static final String SERVER_HOST = "localhost";
     private static final int SERVER_PORT = 8080;
