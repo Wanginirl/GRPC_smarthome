@@ -4,44 +4,44 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * light_control service
+ * light service
  * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.61.1)",
-    comments = "Source: SmarthomeService.proto")
+    comments = "Source: SmartHomeService.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class LightControlGrpc {
+public final class LightControlServiceGrpc {
 
-  private LightControlGrpc() {}
+  private LightControlServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "com.smarthome.LightControl";
+  public static final java.lang.String SERVICE_NAME = "com.smarthome.LightControlService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.smarthome.service.ToggleRequest,
       com.smarthome.service.ToggleResponse> getToggleLightMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ToggleLight",
+      fullMethodName = SERVICE_NAME + '/' + "toggleLight",
       requestType = com.smarthome.service.ToggleRequest.class,
       responseType = com.smarthome.service.ToggleResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.smarthome.service.ToggleRequest,
       com.smarthome.service.ToggleResponse> getToggleLightMethod() {
     io.grpc.MethodDescriptor<com.smarthome.service.ToggleRequest, com.smarthome.service.ToggleResponse> getToggleLightMethod;
-    if ((getToggleLightMethod = LightControlGrpc.getToggleLightMethod) == null) {
-      synchronized (LightControlGrpc.class) {
-        if ((getToggleLightMethod = LightControlGrpc.getToggleLightMethod) == null) {
-          LightControlGrpc.getToggleLightMethod = getToggleLightMethod =
+    if ((getToggleLightMethod = LightControlServiceGrpc.getToggleLightMethod) == null) {
+      synchronized (LightControlServiceGrpc.class) {
+        if ((getToggleLightMethod = LightControlServiceGrpc.getToggleLightMethod) == null) {
+          LightControlServiceGrpc.getToggleLightMethod = getToggleLightMethod =
               io.grpc.MethodDescriptor.<com.smarthome.service.ToggleRequest, com.smarthome.service.ToggleResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ToggleLight"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "toggleLight"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.smarthome.service.ToggleRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.smarthome.service.ToggleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new LightControlMethodDescriptorSupplier("ToggleLight"))
+              .setSchemaDescriptor(new LightControlServiceMethodDescriptorSupplier("toggleLight"))
               .build();
         }
       }
@@ -52,50 +52,50 @@ public final class LightControlGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static LightControlStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LightControlStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LightControlStub>() {
+  public static LightControlServiceStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LightControlServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<LightControlServiceStub>() {
         @java.lang.Override
-        public LightControlStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LightControlStub(channel, callOptions);
+        public LightControlServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new LightControlServiceStub(channel, callOptions);
         }
       };
-    return LightControlStub.newStub(factory, channel);
+    return LightControlServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static LightControlBlockingStub newBlockingStub(
+  public static LightControlServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LightControlBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LightControlBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<LightControlServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<LightControlServiceBlockingStub>() {
         @java.lang.Override
-        public LightControlBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LightControlBlockingStub(channel, callOptions);
+        public LightControlServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new LightControlServiceBlockingStub(channel, callOptions);
         }
       };
-    return LightControlBlockingStub.newStub(factory, channel);
+    return LightControlServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static LightControlFutureStub newFutureStub(
+  public static LightControlServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LightControlFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<LightControlFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<LightControlServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<LightControlServiceFutureStub>() {
         @java.lang.Override
-        public LightControlFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new LightControlFutureStub(channel, callOptions);
+        public LightControlServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new LightControlServiceFutureStub(channel, callOptions);
         }
       };
-    return LightControlFutureStub.newStub(factory, channel);
+    return LightControlServiceFutureStub.newStub(factory, channel);
   }
 
   /**
    * <pre>
-   * light_control service
+   * light service
    * </pre>
    */
   public interface AsyncService {
@@ -109,36 +109,36 @@ public final class LightControlGrpc {
   }
 
   /**
-   * Base class for the server implementation of the service LightControl.
+   * Base class for the server implementation of the service LightControlService.
    * <pre>
-   * light_control service
+   * light service
    * </pre>
    */
-  public static abstract class LightControlImplBase
+  public static abstract class LightControlServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return LightControlGrpc.bindService(this);
+      return LightControlServiceGrpc.bindService(this);
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service LightControl.
+   * A stub to allow clients to do asynchronous rpc calls to service LightControlService.
    * <pre>
-   * light_control service
+   * light service
    * </pre>
    */
-  public static final class LightControlStub
-      extends io.grpc.stub.AbstractAsyncStub<LightControlStub> {
-    private LightControlStub(
+  public static final class LightControlServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<LightControlServiceStub> {
+    private LightControlServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LightControlStub build(
+    protected LightControlServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LightControlStub(channel, callOptions);
+      return new LightControlServiceStub(channel, callOptions);
     }
 
     /**
@@ -151,22 +151,22 @@ public final class LightControlGrpc {
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service LightControl.
+   * A stub to allow clients to do synchronous rpc calls to service LightControlService.
    * <pre>
-   * light_control service
+   * light service
    * </pre>
    */
-  public static final class LightControlBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<LightControlBlockingStub> {
-    private LightControlBlockingStub(
+  public static final class LightControlServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<LightControlServiceBlockingStub> {
+    private LightControlServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LightControlBlockingStub build(
+    protected LightControlServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LightControlBlockingStub(channel, callOptions);
+      return new LightControlServiceBlockingStub(channel, callOptions);
     }
 
     /**
@@ -178,22 +178,22 @@ public final class LightControlGrpc {
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service LightControl.
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service LightControlService.
    * <pre>
-   * light_control service
+   * light service
    * </pre>
    */
-  public static final class LightControlFutureStub
-      extends io.grpc.stub.AbstractFutureStub<LightControlFutureStub> {
-    private LightControlFutureStub(
+  public static final class LightControlServiceFutureStub
+      extends io.grpc.stub.AbstractFutureStub<LightControlServiceFutureStub> {
+    private LightControlServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected LightControlFutureStub build(
+    protected LightControlServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LightControlFutureStub(channel, callOptions);
+      return new LightControlServiceFutureStub(channel, callOptions);
     }
 
     /**
@@ -256,9 +256,9 @@ public final class LightControlGrpc {
         .build();
   }
 
-  private static abstract class LightControlBaseDescriptorSupplier
+  private static abstract class LightControlServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    LightControlBaseDescriptorSupplier() {}
+    LightControlServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -267,21 +267,21 @@ public final class LightControlGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("LightControl");
+      return getFileDescriptor().findServiceByName("LightControlService");
     }
   }
 
-  private static final class LightControlFileDescriptorSupplier
-      extends LightControlBaseDescriptorSupplier {
-    LightControlFileDescriptorSupplier() {}
+  private static final class LightControlServiceFileDescriptorSupplier
+      extends LightControlServiceBaseDescriptorSupplier {
+    LightControlServiceFileDescriptorSupplier() {}
   }
 
-  private static final class LightControlMethodDescriptorSupplier
-      extends LightControlBaseDescriptorSupplier
+  private static final class LightControlServiceMethodDescriptorSupplier
+      extends LightControlServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final java.lang.String methodName;
 
-    LightControlMethodDescriptorSupplier(java.lang.String methodName) {
+    LightControlServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -296,11 +296,11 @@ public final class LightControlGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (LightControlGrpc.class) {
+      synchronized (LightControlServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new LightControlFileDescriptorSupplier())
+              .setSchemaDescriptor(new LightControlServiceFileDescriptorSupplier())
               .addMethod(getToggleLightMethod())
               .build();
         }

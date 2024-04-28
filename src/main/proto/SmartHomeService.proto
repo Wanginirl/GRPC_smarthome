@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package com.smarthome;
+
+option java_multiple_files = true;
+option java_package = "com.smarthome.service";
+option java_outer_classname = "ServiceProto";
+
+// light service
+service LightControlService {
+  rpc toggleLight (ToggleRequest) returns (ToggleResponse) {}
+}
+
+message ToggleRequest {
+  bool status = 1; // true for ON, false for OFF
+}
+
+message ToggleResponse {
+  bool result = 1; // true if successful
+}
+
+// temperature sensor service
+service TemperatureSensorService {
+  rpc streamTemperature (TemperatureRequest) returns (stream TemperatureResponse) {} // server streaming RPC
+}
+
+message TemperatureRequest {}
+
+message TemperatureResponse {
+  double temperature = 1;
+}
+
+// security system service
+service SecuritySystemService {
+  rpc reportStatus (stream SecurityStatus) returns (SystemResponse) {} // client streaming RPC
+  rpc monitorSystem (stream SecurityCommand) returns (stream SecurityEvent) {} // bidirectional streaming RPC
+}
+
+message SecurityStatus {
+  string status = 1;
+}
+
+message SystemResponse {
+  bool acknowledged = 1;
+}
+
+message SecurityCommand {
+  string command = 1;
+}
+
+message SecurityEvent {
+  string event = 1;
+}

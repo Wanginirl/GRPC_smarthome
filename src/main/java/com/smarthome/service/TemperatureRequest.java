@@ -4,19 +4,18 @@
 package com.smarthome.service;
 
 /**
- * Protobuf type {@code com.smarthome.ToggleRequest}
+ * Protobuf type {@code com.smarthome.TemperatureRequest}
  */
-public  final class ToggleRequest extends
+public  final class TemperatureRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.smarthome.ToggleRequest)
-    ToggleRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.smarthome.TemperatureRequest)
+    TemperatureRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ToggleRequest.newBuilder() to construct.
-  private ToggleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TemperatureRequest.newBuilder() to construct.
+  private TemperatureRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ToggleRequest() {
-    status_ = false;
+  private TemperatureRequest() {
   }
 
   @java.lang.Override
@@ -24,7 +23,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ToggleRequest(
+  private TemperatureRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -32,7 +31,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -43,11 +41,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            status_ = input.readBool();
-            break;
-          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -69,28 +62,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.smarthome.service.ServiceProto.internal_static_com_smarthome_ToggleRequest_descriptor;
+    return com.smarthome.service.ServiceProto.internal_static_com_smarthome_TemperatureRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.smarthome.service.ServiceProto.internal_static_com_smarthome_ToggleRequest_fieldAccessorTable
+    return com.smarthome.service.ServiceProto.internal_static_com_smarthome_TemperatureRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.smarthome.service.ToggleRequest.class, com.smarthome.service.ToggleRequest.Builder.class);
-  }
-
-  public static final int STATUS_FIELD_NUMBER = 1;
-  private boolean status_;
-  /**
-   * <pre>
-   * true for ON, false for OFF
-   * </pre>
-   *
-   * <code>bool status = 1;</code>
-   */
-  public boolean getStatus() {
-    return status_;
+            com.smarthome.service.TemperatureRequest.class, com.smarthome.service.TemperatureRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -107,9 +87,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != false) {
-      output.writeBool(1, status_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -119,10 +96,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, status_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -133,14 +106,12 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.smarthome.service.ToggleRequest)) {
+    if (!(obj instanceof com.smarthome.service.TemperatureRequest)) {
       return super.equals(obj);
     }
-    com.smarthome.service.ToggleRequest other = (com.smarthome.service.ToggleRequest) obj;
+    com.smarthome.service.TemperatureRequest other = (com.smarthome.service.TemperatureRequest) obj;
 
     boolean result = true;
-    result = result && (getStatus()
-        == other.getStatus());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -152,77 +123,74 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getStatus());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(byte[] data)
+  public static com.smarthome.service.TemperatureRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(java.io.InputStream input)
+  public static com.smarthome.service.TemperatureRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smarthome.service.ToggleRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.smarthome.service.TemperatureRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.smarthome.service.ToggleRequest parseDelimitedFrom(
+  public static com.smarthome.service.TemperatureRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smarthome.service.ToggleRequest parseFrom(
+  public static com.smarthome.service.TemperatureRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -235,7 +203,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.smarthome.service.ToggleRequest prototype) {
+  public static Builder newBuilder(com.smarthome.service.TemperatureRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -251,26 +219,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.smarthome.ToggleRequest}
+   * Protobuf type {@code com.smarthome.TemperatureRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.smarthome.ToggleRequest)
-      com.smarthome.service.ToggleRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.smarthome.TemperatureRequest)
+      com.smarthome.service.TemperatureRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_ToggleRequest_descriptor;
+      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_TemperatureRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_ToggleRequest_fieldAccessorTable
+      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_TemperatureRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.smarthome.service.ToggleRequest.class, com.smarthome.service.ToggleRequest.Builder.class);
+              com.smarthome.service.TemperatureRequest.class, com.smarthome.service.TemperatureRequest.Builder.class);
     }
 
-    // Construct using com.smarthome.service.ToggleRequest.newBuilder()
+    // Construct using com.smarthome.service.TemperatureRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -288,25 +256,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      status_ = false;
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_ToggleRequest_descriptor;
+      return com.smarthome.service.ServiceProto.internal_static_com_smarthome_TemperatureRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.smarthome.service.ToggleRequest getDefaultInstanceForType() {
-      return com.smarthome.service.ToggleRequest.getDefaultInstance();
+    public com.smarthome.service.TemperatureRequest getDefaultInstanceForType() {
+      return com.smarthome.service.TemperatureRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.smarthome.service.ToggleRequest build() {
-      com.smarthome.service.ToggleRequest result = buildPartial();
+    public com.smarthome.service.TemperatureRequest build() {
+      com.smarthome.service.TemperatureRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -314,9 +280,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.smarthome.service.ToggleRequest buildPartial() {
-      com.smarthome.service.ToggleRequest result = new com.smarthome.service.ToggleRequest(this);
-      result.status_ = status_;
+    public com.smarthome.service.TemperatureRequest buildPartial() {
+      com.smarthome.service.TemperatureRequest result = new com.smarthome.service.TemperatureRequest(this);
       onBuilt();
       return result;
     }
@@ -355,19 +320,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.smarthome.service.ToggleRequest) {
-        return mergeFrom((com.smarthome.service.ToggleRequest)other);
+      if (other instanceof com.smarthome.service.TemperatureRequest) {
+        return mergeFrom((com.smarthome.service.TemperatureRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.smarthome.service.ToggleRequest other) {
-      if (other == com.smarthome.service.ToggleRequest.getDefaultInstance()) return this;
-      if (other.getStatus() != false) {
-        setStatus(other.getStatus());
-      }
+    public Builder mergeFrom(com.smarthome.service.TemperatureRequest other) {
+      if (other == com.smarthome.service.TemperatureRequest.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -383,55 +345,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.smarthome.service.ToggleRequest parsedMessage = null;
+      com.smarthome.service.TemperatureRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.smarthome.service.ToggleRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.smarthome.service.TemperatureRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private boolean status_ ;
-    /**
-     * <pre>
-     * true for ON, false for OFF
-     * </pre>
-     *
-     * <code>bool status = 1;</code>
-     */
-    public boolean getStatus() {
-      return status_;
-    }
-    /**
-     * <pre>
-     * true for ON, false for OFF
-     * </pre>
-     *
-     * <code>bool status = 1;</code>
-     */
-    public Builder setStatus(boolean value) {
-      
-      status_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * true for ON, false for OFF
-     * </pre>
-     *
-     * <code>bool status = 1;</code>
-     */
-    public Builder clearStatus() {
-      
-      status_ = false;
-      onChanged();
       return this;
     }
     @java.lang.Override
@@ -447,41 +371,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.smarthome.ToggleRequest)
+    // @@protoc_insertion_point(builder_scope:com.smarthome.TemperatureRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.smarthome.ToggleRequest)
-  private static final com.smarthome.service.ToggleRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.smarthome.TemperatureRequest)
+  private static final com.smarthome.service.TemperatureRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.smarthome.service.ToggleRequest();
+    DEFAULT_INSTANCE = new com.smarthome.service.TemperatureRequest();
   }
 
-  public static com.smarthome.service.ToggleRequest getDefaultInstance() {
+  public static com.smarthome.service.TemperatureRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ToggleRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ToggleRequest>() {
+  private static final com.google.protobuf.Parser<TemperatureRequest>
+      PARSER = new com.google.protobuf.AbstractParser<TemperatureRequest>() {
     @java.lang.Override
-    public ToggleRequest parsePartialFrom(
+    public TemperatureRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ToggleRequest(input, extensionRegistry);
+      return new TemperatureRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ToggleRequest> parser() {
+  public static com.google.protobuf.Parser<TemperatureRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ToggleRequest> getParserForType() {
+  public com.google.protobuf.Parser<TemperatureRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.smarthome.service.ToggleRequest getDefaultInstanceForType() {
+  public com.smarthome.service.TemperatureRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
