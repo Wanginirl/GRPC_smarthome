@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
@@ -21,7 +22,11 @@ public class SmartHomeGUIController {
 
     @FXML
     private void handleStreamTemperature() {
-        // This needs proper handling for asynchronous updates. This is just a placeholder.
+        client.streamTemperature(temperature -> {
+            Platform.runLater(() -> {
+                outputArea.appendText("Current Temperature: " + temperature + "\n");
+            });
+        });
         outputArea.appendText("Streaming temperature...\n");
     }
 
@@ -29,5 +34,9 @@ public class SmartHomeGUIController {
     private void handleReportStatus() {
         client.reportStatus();
         outputArea.appendText("Reporting status...\n");
+    }@FXML
+    private void handleMonitorSystem() {
+        client.monitorSystem();
+        outputArea.appendText("Monitoring system...\n");
     }
 }

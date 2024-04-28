@@ -11,6 +11,8 @@ import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.health.model.HealthService;
 
 import java.util.List;
+import java.util.function.Consumer;
+
 public class SmartHomeClient {
     private ConsulClient consulClient;
     private String consulHost;
@@ -23,9 +25,8 @@ public class SmartHomeClient {
     }
 
     private int getServicePort(String serviceName) {
-        // Get the list of healthy services from Consul and pick the first one from the
-        List
-                <HealthService> services = consulClient.getHealthServices(serviceName, true, QueryParams.DEFAULT).getValue();
+        // Get the list of healthy services from Consul and pick the first one from the list
+        List<HealthService> services = consulClient.getHealthServices(serviceName, true, QueryParams.DEFAULT).getValue();
         if (!services.isEmpty()) {
             return services.get(0).getService().getPort();
         } else {
@@ -43,14 +44,14 @@ public class SmartHomeClient {
         channel.shutdown();
     }
 
-    public void streamTemperature() {
+    public void streamTemperature(Consumer<Double> callback) { // Callback to display the temperature stream on the GUI
         int port = getServicePort("TemperatureSensorService");
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
         TemperatureSensorServiceGrpc.TemperatureSensorServiceStub stub = TemperatureSensorServiceGrpc.newStub(channel);
         StreamObserver<TemperatureResponse> responseObserver = new StreamObserver<TemperatureResponse>() {
             @Override
             public void onNext(TemperatureResponse value) {
-                System.out.println("Current Temperature: " + value.getTemperature());
+                callback.accept(value.getTemperature()); // Pass the temperature value to the callback
             }
 
             @Override
@@ -143,10 +144,14 @@ public class SmartHomeClient {
         client.toggleLight(false); // Turn the light OFF
 
         // Stream temperatures
-        client.streamTemperature();
+        client.streamTemperature(temperature -> {
+            System.out.println("Current Temperature: " + temperature);
+        });
 
         // Report security status
         client.reportStatus();
 
+        // Monitor security system
+        client.monitorSystem();
     }
 }

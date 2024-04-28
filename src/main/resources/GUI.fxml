@@ -13,7 +13,10 @@
         <Button text="Toggle Light ON" onAction="#handleToggleLightOn"/>
         <Button text="Toggle Light OFF" onAction="#handleToggleLightOff"/>
     </HBox>
-    <Button text="Stream Temperature" onAction="#handleStreamTemperature"/>
-    <Button text="Report Status" onAction="#handleReportStatus"/>
-    <TextArea fx:id="outputArea" editable="false"/>
+    <HBox spacing="10">
+        <Button text="Stream Temperature" onAction="#handleStreamTemperature"/>
+        <Button text="Report Status" onAction="#handleReportStatus"/>
+        <Button text="Monitor System" onAction="#handleMonitorSystem"/>
+    </HBox>
+    <TextArea fx:id="outputArea" editable="false" prefHeight="200"/>
 </VBox>

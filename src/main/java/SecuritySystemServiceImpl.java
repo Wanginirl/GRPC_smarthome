@@ -3,7 +3,8 @@ import io.grpc.stub.StreamObserver;
 
 public class SecuritySystemServiceImpl extends SecuritySystemServiceGrpc.SecuritySystemServiceImplBase {
     @Override
-    public StreamObserver<SecurityStatus> reportStatus(StreamObserver<SystemResponse> responseObserver) {
+    // This method is called when the client sends a request to arm or disarm the security system
+    public StreamObserver<SecurityStatus> reportStatus(StreamObserver<SystemResponse> responseObserver) { // client streaming RPC
         return new StreamObserver<SecurityStatus>() {
             @Override
             public void onNext(SecurityStatus securityStatus) {
@@ -25,7 +26,8 @@ public class SecuritySystemServiceImpl extends SecuritySystemServiceGrpc.Securit
     }
 
     @Override
-    public StreamObserver<SecurityCommand> monitorSystem(StreamObserver<SecurityEvent> responseObserver) {
+    // This method is called when the client sends a request to monitor the security system
+    public StreamObserver<SecurityCommand> monitorSystem(StreamObserver<SecurityEvent> responseObserver) { // server streaming RPC
         return new StreamObserver<SecurityCommand>() {
             @Override
             public void onNext(SecurityCommand securityCommand) {
@@ -47,59 +49,7 @@ public class SecuritySystemServiceImpl extends SecuritySystemServiceGrpc.Securit
             }
         };
     }
-//    @Override
-//    public StreamObserver<BidirectionalRequest> bidirectionalStream(StreamObserver<BidirectionalResponse> responseObserver) {
-//        return new StreamObserver<BidirectionalRequest>() {
-//            @Override
-//            public void onNext(BidirectionalRequest request) {
-//                System.out.println("Received message from client: " + request.getMessage());
-//
-//                // Respond to the client's message with a stream
-//                for (int i = 0; i < 5; i++) {
-//                    BidirectionalResponse response = BidirectionalResponse.newBuilder()
-//                            .setMessage("Response " + i)
-//                            .build();
-//                    responseObserver.onNext(response);
-//                }
-//            }
-//
-//            @Override
-//            public void onError(Throwable t) {
-//                System.err.println("Error from client: " + t.getMessage());
-//            }
-//
-//            @Override
-//            public void onCompleted() {
-//                System.out.println("Client stream completed");
-//                responseObserver.onCompleted(); // Complete the response stream
-//            }
-//        };
-//    }
-//    @Override
-//    public StreamObserver<ClientInformation> streamClientInformation(StreamObserver<ServerResponse> responseObserver) {
-//        return new StreamObserver<ClientInformation>() {
-//            @Override
-//            public void onNext(ClientInformation clientInfo) {
-//                System.out.println("Received client information:");
-//                System.out.println("Client Name: " + clientInfo.getClientName());
-//                System.out.println("Date and Time: " + clientInfo.getDateTime());
-//            }
-//
-//            @Override
-//            public void onError(Throwable t) {
-//                System.err.println("Error in client information streaming: " + t.getMessage());
-//            }
-//
-//            @Override
-//            public void onCompleted() {
-//                System.out.println("Client information streaming completed");
-//                ServerResponse response = ServerResponse.newBuilder()
-//                        .setMessage("Client information streaming completed")
-//                        .build();
-//                responseObserver.onNext(response);
-//                responseObserver.onCompleted();
-//            }
-//        };
-//    }
-//}
+
+
+
 }
