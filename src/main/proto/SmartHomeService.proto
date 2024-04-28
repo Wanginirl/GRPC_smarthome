@@ -8,7 +8,7 @@ option java_outer_classname = "ServiceProto";
 
 // light service
 service LightControlService {
-  rpc toggleLight (ToggleRequest) returns (ToggleResponse) {}
+  rpc toggleLight (ToggleRequest) returns (ToggleResponse) {} // unary RPC
 }
 
 message ToggleRequest {
